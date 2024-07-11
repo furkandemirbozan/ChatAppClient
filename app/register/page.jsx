@@ -8,33 +8,33 @@ export default function Page() {
   const [success, setSuccess] = useState("");
   function handleSubmit(e) {
     e.preventDefault();
-    
+
     const username = e.currentTarget.username.value;
     const password = e.currentTarget.password.value;
     const passwordAgain = e.currentTarget.passwordAgain.value;
     const email = e.currentTarget.email.value;
     const fullName = e.currentTarget.fullName.value;
     setError("");
-    if(password !== passwordAgain){
-        setError("Passwords are not the same");
-        return;
+    if (password !== passwordAgain) {
+      setError("Passwords are not the same");
+      return;
     }
     fetch("/api/users", {
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json",
-        },
-        body:JSON.stringify({
-            username, password, email, fullName
-        }),
-    }).then(response=>{
-        return response.json();
-    }).then(data=>{
-        setSuccess("");
-        if(data && data.statusCode===201){
-            setSuccess("User registered successfully")
-            location.href="/";
-        }
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username, password, email, fullName
+      }),
+    }).then(response => {
+      return response.json();
+    }).then(data => {
+      setSuccess("");
+      if (data && data.statusCode === 201) {
+        setSuccess("User registered successfully")
+        location.href = "/";
+      }
     })
   }
   return (
