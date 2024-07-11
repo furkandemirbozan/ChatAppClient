@@ -32,7 +32,7 @@ export default function Page() {
     }).then(data => {
       setSuccess("");
       if (data && data.statusCode === 201) {
-        setSuccess("User registered successfully")
+        setSuccess("User registered successfully!")
         location.href = "/";
       }
     })
