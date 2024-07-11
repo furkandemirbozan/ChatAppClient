@@ -1,0 +1,16 @@
+.leftPanelGrid {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+  .box {
+    color: rgb(128, 128, 239);
+    cursor: pointer;
+  }
+  .box:hover {
+    color: rgb(235, 76, 76);
+    background-color: rgb(213, 212, 212);
+    transform: scale(0.98);
+  }
+  .active {
+    color: green;
+    background-color: rgb(135, 219, 167);/* sonrada */
+  }
